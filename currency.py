@@ -14,11 +14,6 @@ print((lambda x,y: x[y:]+x[:y])((input("Enter a list: ").split(" ")), int(input(
 print((lambda x: max(x, key=len))(input("Enter a list: ").split(" ")))
 print((lambda x: (lambda y: all(((y.append(i) or True) if i in "{[(" else ((y.pop() or False) if ({"(":")","{":"}","[":"]"}[y[-1]]==i) else None) for i in x)))([]))(list("({}[])")))
 print((lambda x: (lambda y: [y.append(i) for i in x if not i in y] and y)([]))([1, 2, 3, 2, 4, 3, 5]))
-print((lambda x: (lambda y:[sum([y, int(x[i-1]), int(x[i+1])]) and [x.pop(k) for k in range(0, i)] if x[i] =="+" else (abs(y - int(x[i-1])-int(x[i])) and [x.pop(k) for k in range(0, i)] if x[i+1]=="-" else None) for i in range(1, len(x)-1)])(0))(list("2+3-1")))
-print((lambda x:   ((lambda y: y.append(x[i+1:x.index("-", i+1)-1]) for i in range(len(x)) if x[i] == "-" or y)([]),   (lambda z: (z.append(x[i+1:x.index("-", i+1)-1]) for i in range(len(x)) if x[i] == "-" or z)([]))  )   )(list("2+3-1")))
-lis=["1", "+", "2", "-", "3"]
-lis.pop(lis.index("1"):lis.index("2")+1)
-print(lis)
 print((lambda x, y: [i for i in x for k in range(y)])(input("Gimme list: ").split(", "), int(input("Give me an integer: "))))
 print((lambda x: [eval(i) for i in x])(input("Give me a list: ").split("; ")))
 print((lambda a, b:[a[i] for i in range(len(min(a, b))) if a[i]==b[i]])([1,2,3,4], [1,5,3,7]))
